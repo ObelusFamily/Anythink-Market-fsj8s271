@@ -24,7 +24,7 @@ const ItemSearchBox = ({handleSearchByTitle, handleLoadAllItems}) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  filterItems: (tab, pager, payload) => dispatch({type: FILTER_ITEMS_BY_TITLE, tab, pager, payload}),
+  filterItems: (tab, pager, payload, searchedTitle) => dispatch({type: FILTER_ITEMS_BY_TITLE, tab, pager, payload, searchedTitle}),
   loadAllItems: (tab,pager,payload) => dispatch({type: HOME_PAGE_LOADED, tab, pager, payload})
 })
 
@@ -36,7 +36,8 @@ const Banner = ({filterItems,loadAllItems}) => {
     filterItems(
       tab,
       itemsPromise,
-      Promise.all([agent.Tags.getAll(),itemsPromise(title)])
+      Promise.all([agent.Tags.getAll(),itemsPromise(title)]),
+      title
     )
   }
 
