@@ -59,3 +59,24 @@ body {
 .user-info {
   min-width: 800px;
 }
+
+
+.heading-two{
+  font-size:1.5rem;
+}
+
+
+
+.banner-search{
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.banner-search input{
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  min-width:380px
+}
